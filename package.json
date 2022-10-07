@@ -18,6 +18,6 @@
   "author": "Sophie LeBron",
   "dependencies": {
     "inquirer": "^8.2.4",
-    "mysql2": "^2.2.5",
+    "mysql2": "^2.2.5"
   }
 }
