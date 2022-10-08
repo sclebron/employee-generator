@@ -196,7 +196,7 @@ const addEmployee = () => {
                             choices: managers
                         }
                     ])
-                    .then(managerChoice) => {
+                    .then(managerChoice => {
                         const manager = managerChoice.manager;
                         newEmployee.push(manager);
                         const sql = `INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`;
@@ -204,7 +204,7 @@ const addEmployee = () => {
                             if (error) throw error;
                             viewAllEmployees();
                         });
-                    };
+                    });
                 });
             });
         });
