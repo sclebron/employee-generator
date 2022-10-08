@@ -13,11 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sclebron/employee-tracker.git",
+    "url": "git+https://github.com/sclebron/employee-tracker.git"
   },
   "author": "Sophie LeBron",
   "dependencies": {
     "inquirer": "^8.2.4",
-    "mysql2": "^2.2.5"
+    "mysql2": "^2.2.5",
+    "console.table": "^0.10.0"
   }
 }
