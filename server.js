@@ -59,7 +59,7 @@ const viewAllDepartments = () => {
     let sql = `SELECT department.id AS id, department.department_name AS department FROM department`;
     connection.query(sql, (error, response) => {
     if (error) throw error;
-    console.log("Response:", response);
+    console.table("Response:", response);
     promptUser();
     });
 };
@@ -69,7 +69,7 @@ const viewAllRoles = () => {
     INNER JOIN department ON role.department_id = department.id`;
     connection.query(sql, (error, response) => {
         if (error) throw error;
-        console.log("Response:", response);
+        console.table("Response:", response);
         promptUser();
     });
 };
@@ -78,7 +78,7 @@ const viewAllEmployees = () => {
     let sql = `SELECT employee.id, employee.first_name, employee.last_name, role.title, department.department_name AS 'department', role.salary FROM employee, role, department WHERE department.id = role.department_id AND role.id = employee.role_id ORDER BY employee.id ASC`;
     connection.query(sql, (error, response) => {
         if (error) throw error;
-        console.log("Response:", response);
+        console.table("Response:", response);
         promptUser();
     });
 };
