@@ -67,19 +67,19 @@ const viewAllDepartments = () => {
 const viewAllRoles = () => {
     let sql = `SELECT role.id, role.title, role.salary, department.department_name AS department FROM role
     INNER JOIN department ON role.department_id = department.id`;
-    connection.promise().query(sql, (error, response) => {
+    connection.query(sql, (error, response) => {
         if (error) throw error;
-        console.table(response);
+        console.log("Response:", response);
         promptUser();
     });
 };
 
 const viewAllEmployees = () => {
     let sql = `SELECT employee.id, employee.first_name, employee.last_name, role.title, department.department_name AS 'department', role.salary FROM employee, role, department WHERE department.id = role.department_id AND role.id = employee.role_id ORDER BY employee.id ASC`;
-    connection.promise().query(sql, (error, response) => {
+    connection.query(sql, (error, response) => {
         if (error) throw error;
-        console.log(response);
-        promptUser;
+        console.log("Response:", response);
+        promptUser();
     });
 };
 
