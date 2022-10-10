@@ -57,9 +57,9 @@ const promptUser = () => {
 
 const viewAllDepartments = () => {
     let sql = `SELECT department.id AS id, department.department_name AS department FROM department`;
-    connection.promise().query(sql, (error, response) => {
+    connection.query(sql, (error, response) => {
     if (error) throw error;
-    console.table(response);
+    console.log("Response:", response);
     promptUser();
     });
 };
